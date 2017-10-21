@@ -1,0 +1,26 @@
+{
+    "author": "MakeAwesomeHappen",
+    "dependencies": {},
+    "keywords": [
+        "pebble-app"
+    ],
+    "name": "rocky-tut-part2",
+    "pebble": {
+        "capabilities": [
+            "location"
+        ],
+        "displayName": "rocky-tut-part2",
+        "enableMultiJS": true,
+        "messageKeys": [],
+        "projectType": "rocky",
+        "resources": {
+            "media": []
+        },
+        "sdkVersion": "3",
+        "uuid": "8c20caf3-db28-4ff8-87c2-8ba98e1fcbb6",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "1.0.0"
+}
