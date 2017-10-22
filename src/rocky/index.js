@@ -79,16 +79,23 @@ function drawHomeassistantData(ctx, homeassistantData) {
   var humidity = homeassistantData.humidity;
   var upstairs_lights = homeassistantData.upstairs_lights;
   var living_room_lights = homeassistantData.living_room_lights;
-  // Draw the text, top center
+  var keyXposition = 0;
+  var valueXposition = 80;
+  // Print it
   ctx.fillStyle = 'lightgray';
   ctx.textAlign = 'left';
   ctx.font = '18px Gothic';
-  //  ctx.fillText(temperature, ctx.canvas.unobstructedWidth / 2, 2);
-  ctx.fillText('Temp:            ' + current_temperature, 0, 2);
-  ctx.fillText('Set Temp:      ' + set_temperature, 0, 20);
-  ctx.fillText('Thermostate: ' + thermostate_state, 0, 40);
-  ctx.fillText('Humidity:       ' + humidity, 0, 60);
-  ctx.fillText('Upstairs:        ' + upstairs_lights, 0, 80);
-  ctx.fillText('Downstairs:   ' + living_room_lights, 0, 100);
+  ctx.fillText('Temp:', keyXposition, 2);
+  ctx.fillText(current_temperature, valueXposition, 2);
+  ctx.fillText('Set Temp:', keyXposition, 20);
+  ctx.fillText(set_temperature, valueXposition, 20);
+  ctx.fillText('Thermostate:', keyXposition, 40);
+  ctx.fillText(thermostate_state, valueXposition, 40);
+  ctx.fillText('Humidity:', keyXposition, 60);
+  ctx.fillText(humidity, valueXposition, 60);
+  ctx.fillText('Upstairs:', keyXposition, 80);
+  ctx.fillText(upstairs_lights, valueXposition, 80);
+  ctx.fillText('Downstairs:', keyXposition, 100);
+  ctx.fillText(living_room_lights, valueXposition, 100);
 }
 
