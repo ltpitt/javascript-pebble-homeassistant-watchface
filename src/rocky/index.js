@@ -4,6 +4,11 @@ var rocky = require('rocky');
 // Global object to store home assistant data
 var homeassistantData;
 
+// Update threshold in minutes (after this value data will be refreshed)
+var updateThresholdMinutes = 15;
+// Counter variable for passed minutes
+var minuteCounter = 0 ;
+
 rocky.on('hourchange', function(event) {
   // Send a message to fetch the weather information (on startup and every hour)
   rocky.postMessage({'fetch': true});
@@ -11,6 +16,11 @@ rocky.on('hourchange', function(event) {
 
 rocky.on('minutechange', function(event) {
   // Tick every minute
+  minuteCounter ++;
+  if (minuteCounter >= updateThresholdMinutes) {
+    rocky.postMessage({'fetch': true});
+    minuteCounter = 0;
+  }
   rocky.requestDraw();
 });
 
@@ -19,12 +29,12 @@ rocky.on('message', function(event) {
   var message = event.data;
 
   if (message) {
+  
     // Save the home assistant data
     homeassistantData = message;
-
     // Request a redraw so we see the information
     rocky.requestDraw();
-  
+    
   }
   
 });

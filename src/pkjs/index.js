@@ -4,7 +4,7 @@ Pebble.on('message', function(event) {
   // Get the message that was passed
   var message = event.data;
   if (message.fetch) {
-      var url = 'http://www.davidenastri.it:8080/homeassistant/status';
+      var url = 'YOUR_URL';
       request(url, 'GET', function(respText) {
           var homeassistantData = JSON.parse(respText);      
           Pebble.postMessage(homeassistantData);

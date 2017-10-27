@@ -1,15 +1,12 @@
 {
-    "author": "MakeAwesomeHappen",
+    "author": "Pipisoft",
     "dependencies": {},
     "keywords": [
         "pebble-app"
     ],
     "name": "rocky-tut-part2",
     "pebble": {
-        "capabilities": [
-            "location"
-        ],
-        "displayName": "rocky-tut-part2",
+        "displayName": "Home sweet home",
         "enableMultiJS": true,
         "messageKeys": [],
         "projectType": "rocky",
@@ -17,6 +14,12 @@
             "media": []
         },
         "sdkVersion": "3",
+        "targetPlatforms": [
+            "basalt",
+            "chalk",
+            "diorite",
+            "emery"
+        ],
         "uuid": "8c20caf3-db28-4ff8-87c2-8ba98e1fcbb6",
         "watchapp": {
             "watchface": true
